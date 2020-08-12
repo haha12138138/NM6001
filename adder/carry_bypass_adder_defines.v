@@ -1,0 +1,3 @@
+`define INPUT_LEN 16
+`define OUTPUT_LEN `INPUT_LEN
+`define BLOCK_LEN 4
