@@ -1,0 +1,22 @@
+CLA module contains 4 files.
+CLA_adder.v is the top level module
+
+CLA_bit_PG and CLA_sum is able to set the width to match the input
+CLA_carry_base currently only supports 2bit CLA. but can configure to 4 bit or higher with ease
+
+connection tips:
+1.	CLA_carrt_base is organized in a tree structure.
+	how to feed carry into corresponding module is a trick.
+	cin is fed into the leftest module in every level.
+
+	index the module on each level from 0~end
+	suppose using  2-bit CLA blocks
+	#0 <-cin
+	#1 <-level one(#(floor(1/2)))
+	#2 <-level two(#(floor(1/4)))
+	#3 <-level one(#(floor(3/2)))
+	#4 <-level three(#(floor(4/8)))
+	.
+	.
+	.
+2.  the carry_in of the sum module is connected to group_PG level 0
